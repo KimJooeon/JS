@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>세명컴퓨터고등학교</title>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .bg {
+            width: 100vw;
+        } 
+
+        .slide-container {
+            width: 300vw
+        }
+
+        .slide-box {
+            width: 100vw;
+            float: left;
+        }
+
+        .slide-box img {
+            width: 100%;
+        }
+    </style>
+    <div style="overflow: hidden;">
+        <img class="bg" src="상단.jpg" loading="lazy">
+        <div class="slide-container">
+            <div class="slide-box">
+                <img src="slide1.jpg">
+            </div>
+            <div class="slide-box">
+                <img src="slide2.jpg">
+            </div>
+            <div class="slide-box">
+                <img src="slide3.jpg">
+            </div>
+        </div>
+
+        <button class="pre">이전</button>
+        <button class="next">다음</button>
+        <button class="auto">자동재생</button>
+        <button class="stop">일시정지</button>
+        <img class="bg" src="하단.jpg" loading="lazy">
+    </div>
+
+    <script>
+        
+
+    </script>
+
+</body>
+
+</html>
