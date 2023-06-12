@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="post" action="https://www.youtube.com/">
+        <input class="inputText"> 입력하세요.
+        <button class="btn" type="submit">전송</button>
+    </form>
+    <script>
+        document.querySelector('.btn').addEventListener('click', function (e) {
+            e.preventDefault();
+            let value = document.querySelector('.inputText').value;
+            if (value == "") {
+                alert("공백")
+            } else if (value.length < 6) {
+                alert("숫자 수")
+            }
+        })
+    </script>
+</body>
+
+</html>

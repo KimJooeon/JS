@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김주언</title>
+    <link rel="stylesheet" href="main.css">
+  
+</head>
+<body>
+    <div id="tagArea">
+
+    </div>
+    <button id="onBtn">띄우기</button>
+    </button>
+
+
+   <script>
+        let randomBrightColor = () => {
+        let color_r = Math.floor(Math.random() * 127 + 128).toString(16);
+        let color_g = Math.floor(Math.random() * 127 + 128).toString(16);
+        let color_b = Math.floor(Math.random() * 127 + 128).toString(16);
+        return `#${color_r+color_g+color_b}`;
+        }
+        
+        document.getElementById('onBtn').addEventListener('click',function(){
+            createView();
+        })
+        var numCount =1;
+
+        function createView(){
+            let newArea = document.getElementById('tagArea');
+            let newView = document.createElement('p');
+            let closeBth = document.createElement('button');
+            closeBth.addEventListener('click',function(){
+                newView.remove();//날림
+            });
+            closeBth.innerHTML = "X";
+            closeBth.style.float='right';
+            closeBth.style.background='transparent';
+            closeBth.style.borderColor='transparent';
+            newView.innerHTML = numCount +" 성훈하고있냐?";
+            newView.style.backgroundColor=randomBrightColor();
+            newView.style.borderRadius='10px';
+            newView.setAttribute('class','park');
+
+           
+            
+            newView.appendChild(closeBth);
+            newArea.appendChild(newView);
+            
+            
+           
+            numCount++;
+        }
+ 
+        
+
+
+   </script>
+
+</body>
+</html>

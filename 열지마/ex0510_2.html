@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>  
+        .slide-container{
+            width: 500vw;
+            /* transition: all 1s; */
+            transform: translateX(-100vw);
+        }
+        .slide-box{
+            width: 100vw;
+            float: left;
+        }
+        .slide-box img{
+            width: 50%;
+        }
+    </style> 
+    <div style ="overflow: hidden">
+        <div class="slide-container">
+            <div class="slide-box">
+                <img src="face3.jpg">
+            </div>
+            <div class="slide-box">
+                <img src="face1.jpg">
+            </div>
+            <div class="slide-box">
+                <img src="face2.jpg">
+            </div>
+            <div class="slide-box">
+                <img src="face3.jpg">
+            </div>
+            <div class="slide-box">
+                <img src="face1.jpg">
+            </div>
+        </div>
+    </div>
+ 
+    <button class="pre">pre</button>
+    <button class="next">next</button>
+
+<script>
+
+    const PageSize ={
+        PAGE1 : "-100",
+        PAGE2 : "-200"
+    };
+
+
+    let moveSize = -100;  // -100 페이지 1 시작위치 -200 페이지 2 시작위치
+    let currentIdx = 1;
+    const slide_containner = document.querySelector('.slide-container').style;
+
+    document.querySelector('.next').addEventListener('click', ()=>{
+        currentIdx++;
+        moveSize = moveSize - 100;
+        slide_containner.transform = 'translateX('+ moveSize +'vw)';
+        slide_containner.transition = 'all 1s';
+
+        if(currentIdx === 4){
+            setTimeout(function() {
+                slide_containner.transform = 'translateX(-100vw)';
+                slide_containner.transition = 'all 0s';
+            }, 1000);
+            moveSize = -100;
+            currentIdx = 1;
+        }
+
+
+
+    });
+
+    document.querySelector('.pre').addEventListener('click', ()=>{
+        
+        moveSize = moveSize + 100;
+        slide_containner.transform = "translateX("+ moveSize +"vw)";
+    });
+
+</script>
+    
+</body>
+</html>

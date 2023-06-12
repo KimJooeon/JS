@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="alert">
+        <span id="ww">5</span>초 이내 구매시 사은품 증정
+    </div>
+
+    <script>
+        let count =5;
+
+        
+
+        var intervalout=setInterval(function(){
+                count=count-1;
+            document.getElementById('ww').innerHTML=count;
+        },1000)
+
+        if(count <= 0){
+                document.querySelector('.alert').style.display ='none';
+                }
+       
+    </script>
+</body>
+</html>

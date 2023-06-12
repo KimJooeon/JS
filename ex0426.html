@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    let ml = 360;
+    let sbml =0;
+    let reml = 0;
+    let count =2;
+    let fullml=0;
+    fullml+=ml;
+    sbml =ml;
+    while (count) {
+        reml = sbml/3*2;
+        sbml =reml;
+        fullml+=reml;
+        //count-=1;
+        if(reml<0.00000001){
+            break;
+        }
+    }
+    fullml=Math.ceil(fullml)
+
+    console.log(fullml)
+
+   </script>
+ 
+</body>
+</html>

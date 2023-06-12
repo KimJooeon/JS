@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>승욱</title>
+</head>
+<body>
+   
+    <style>
+
+        .box{position:relative;
+             width:100px; height:100px; 
+             display:inline-block;
+              margin-right:100px;}
+        .slide-container{
+            width: 500vw;
+            
+            /* transition: all 1s;  */
+            transform: translateX(-100vw);
+            position: relative;
+            /* transform: translateX(-200vw); */
+
+        }
+        .slide-box{
+            width: 100vw;
+            float: left;
+        }
+        .slide-box img{
+            width: 50%;
+        }
+        .pre{
+            position: absolute;
+            z-index: 3;
+            top: 11vw;
+            left: 0.9vw;
+        }
+        .start{
+            position: absolute;
+            z-index: 3;
+            top: 11vw;
+            left: 46.8vw;
+        }
+        .next{
+            position: absolute;
+            z-index: 3;
+            top: 23vw;
+            left: 46.9vw;
+        }
+        .stop{
+            position: absolute;
+            z-index: 3;
+            top: 23vw;
+            left: 43vw;
+        }
+    </style>
+
+    <div>
+   
+
+        
+        <div style="overflow: hidden;"> 
+            
+            <div class="slide-container">
+                
+                <div class="slide-box">
+                    <img  src="px3.jpg"> 
+                </div>
+                <div class="slide-box">
+                    <img  src="px1.jpg"> 
+                </div>
+                <div class="slide-box">
+                    <img  src="px2.jpg"> 
+                </div>
+                <div class="slide-box">
+                    <img  src="px3.jpg"> 
+                </div>
+                <div class="slide-box">
+                    <img  src="px1.jpg"> 
+                </div>
+            </div>
+        </div>
+        <button class="pre">pre</button>
+        <button class="next">next</button>
+        <button class="start">start</button>
+        <button class="stop">stop</button>
+    </div>
+   
+
+
+    <script>
+        // let PageSize={
+        //     PAGE1 : "-100",
+        //     PAGE2 : "-200",
+        //     PAGE3 : "-300"
+        // };
+        let moveSize =-100;
+        let currentIdx=1;
+        let time_slid;
+        const slide_containner = document.querySelector('.slide-container').style;
+        document.querySelector('.slide-container').style.transform = "translateX(-100vw)";
+        
+        //시작
+        document.querySelector('.start').addEventListener('click',() => {
+           
+            time_slid = setInterval(autoPlay, 2000);
+        })
+        //정지
+        document.querySelector('.stop').addEventListener('click',() => {
+            clearInterval(time_slid);
+        })
+        
+        document.querySelector('.next').addEventListener('click',autoPlay); 
+
+
+        //1에서5로
+        function autoPlay(){
+            currentIdx++;
+            moveSize -= 100;
+            
+            slide_containner.transform = "translateX(" + moveSize + "vw)";
+            slide_containner.transition="all 1s";
+            if (currentIdx === 4) {
+                setTimeout(() => {
+                    slide_containner.transition="all 0s";
+                    slide_containner.transform = "translateX(-100vw)";
+                    
+                }, 1000);
+                moveSize = -100;
+                currentIdx=1;
+            }
+        }
+
+        //5에서1로
+        document.querySelector('.pre').addEventListener('click', () => {
+            currentIdx--;
+            moveSize += 100;
+            slide_containner.transform = "translateX(" + moveSize + "vw)";
+            slide_containner.transition="all 1s";
+            if (currentIdx === 0) {
+                setTimeout(() => {
+                    slide_containner.transition="all 0s";
+                    slide_containner.transform = "translateX(-300vw)";
+                    
+                }, 1000);
+                moveSize = -300;
+                currentIdx=3;
+            }
+        });
+
+       
+    </script>
+</body>
+</html>

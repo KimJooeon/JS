@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var 예금액 = 60000;
+        var 미래예금액 =0;
+        
+        
+        for (let index = 0; index <= 2; index++) {
+        if (예금액 <50000){
+            미래예금액= 예금액+((예금액*15)/100)
+        }
+        if(예금액>=50000){
+            미래예금액= 예금액+((예금액*20)/100)
+        }
+            
+        }
+       
+
+
+        console.log(미래예금액*2)
+
+    </script>
+</body>
+
+</html>

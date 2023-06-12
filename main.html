@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김주언</title>
+    <link rel="stylesheet" href="main.css">
+  
+</head>
+<body>
+    <div class="alert_box">알림창 
+        <button class="butt" onclick="clsoeBTN('alert_box','none',0)">X</button>
+     </div>
+      <div class="alert_box">알림창1
+        <button class="butt" onclick="clsoeBTN('alert_box','none',1)">X</button>
+     </div>
+    <button id ="onBtn" >띄우기 
+    </button>
+  
+    
+    <button id ="onBtn1" >띄우기1
+    </button>
+
+
+   <script>
+   // let callbackf = document.getElementById('onBtn').
+    //addEventListener('click');
+
+
+
+       // document.getElementsByClassName('alert_box')[0].style.display=
+        //"none";
+    document.getElementById('onBtn').addEventListener('click',function (){
+        clsoeBTN('alert_box','block',0);
+    });
+    document.getElementById('onBtn1').addEventListener('dblclick',function (){
+        clsoeBTN('alert_box','block',1);
+    });
+
+
+     function clsoeBTN(classID,displayType,indexNum){
+        document.getElementsByClassName(classID)[indexNum]
+    .style.display = displayType;
+        }
+
+ 
+    
+
+   </script>
+
+</body>
+</html>
