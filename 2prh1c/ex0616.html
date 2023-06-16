@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .btn{
+            display: none;
+        }
+    </style>
+    <div style="height: 100px; width: 100px;">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi accusamus facere reiciendis consequuntur earum dignissimos doloremque temporibus. Facilis ipsam minus, facere sint recusandae illum reprehenderit temporibus assumenda atque, perspiciatis dolorum?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente eos eveniet repellat, consectetur perspiciatis hic incidunt ab quaerat distinctio exercitationem accusantium error ex quae, accusamus fuga! Officia nesciunt cupiditate cum!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui veritatis provident atque voluptate iusto ab fugiat porro repellat, voluptates eum recusandae consectetur magni sint. Incidunt pariatur expedita asperiores omnis sint?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, totam, cupiditate blanditiis consectetur quas voluptas non ab fugit quis error delectus nisi facilis itaque repellendus aliquid odio facere eius fugiat.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, eligendi odio! Quisquam modi voluptas tempore. Consequatur dolor perspiciatis nihil rem saepe, ullam est hic amet omnis debitis ipsa, soluta nam.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis similique esse voluptatem minus optio perspiciatis quasi aliquam iure a temporibus iste saepe excepturi consectetur accusamus, obcaecati dolorem. Et, in magni.l
+    <button class="btn">ss</button>
+    </div>
+
+    
+    
+    <script>
+        window.scrollTo(0 , 100);
+        window.scrollBy(0,100);
+        window.addEventListener('scroll',function(){
+            console.log(window.scrollY);
+            if (scrollY>=100) {
+                alert('ww');
+                document.querySelector('.btn').style.display ='block';
+            }
+
+
+});
+    </script>
+</body>
+</html>
