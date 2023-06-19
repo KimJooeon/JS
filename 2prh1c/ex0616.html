@@ -10,31 +10,41 @@
     <style>
         .btn{
             display: none;
+            
+        }
+        .dis{
+            height: 200px; 
+            width: 200px; 
+            overflow-y: scroll;
         }
     </style>
-    <div style="height: 100px; width: 100px;">
+    <div class="dis">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi accusamus facere reiciendis consequuntur earum dignissimos doloremque temporibus. Facilis ipsam minus, facere sint recusandae illum reprehenderit temporibus assumenda atque, perspiciatis dolorum?
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente eos eveniet repellat, consectetur perspiciatis hic incidunt ab quaerat distinctio exercitationem accusantium error ex quae, accusamus fuga! Officia nesciunt cupiditate cum!
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui veritatis provident atque voluptate iusto ab fugiat porro repellat, voluptates eum recusandae consectetur magni sint. Incidunt pariatur expedita asperiores omnis sint?
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, totam, cupiditate blanditiis consectetur quas voluptas non ab fugit quis error delectus nisi facilis itaque repellendus aliquid odio facere eius fugiat.
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, eligendi odio! Quisquam modi voluptas tempore. Consequatur dolor perspiciatis nihil rem saepe, ullam est hic amet omnis debitis ipsa, soluta nam.
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis similique esse voluptatem minus optio perspiciatis quasi aliquam iure a temporibus iste saepe excepturi consectetur accusamus, obcaecati dolorem. Et, in magni.l
-    <button class="btn">ss</button>
+    
     </div>
-
+    <button class="btn">ss</button>
     
     
     <script>
-        window.scrollTo(0 , 100);
-        window.scrollBy(0,100);
-        window.addEventListener('scroll',function(){
-            console.log(window.scrollY);
-            if (scrollY>=100) {
-                alert('ww');
-                document.querySelector('.btn').style.display ='block';
+        const scr = document.querySelector('.dis');
+        const btn_on_off = document.querySelector('.btn');
+        scr.addEventListener('scroll',function(){
+            console.log(scr.scrollTop+':'+ scr.scrollHeigh );
+            if (scr.scrollTop + scr.clientHeight >= scr.scrollHeight -20 ) {
+                btn_on_off.style.display = 'block';
+            }else{
+                btn_on_off.style.display = 'none';
             }
 
-
+       
+});
+        btn_on_off.addEventListener('click',function(){
+            alert("승욱승욱");
 });
     </script>
 </body>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>tab</title>
+    
+    <style>     
+         ul.list {list-style-type:none;margin:0;padding:0;border-bottom: 1px solid #ccc}
+         ul.list::after {content:'';display:block;clear:both}
+         .tab-button { display:block;padding:10px 20px 10px 20px;float:left;margin-right:-1px;margin-bottom:-1px;color:grey;text-decoration:none;cursor:pointer}
+         .active {border-top:2px  ;border-right:1px solid #ccc;border-bottom:1px solid white;border-left:1px solid #ccc;color:black;margin-top:-2px;background-color: gray;}
+         .tab-content {display:none;padding:10px}
+         .show {display:block}
+    </style>
+  
+  </head>
+  <body>
+    <!--tab-->
+    <div class="container mt-5">
+        <ul class="list" style="background-color: #ccc;">
+            <li class="tab-button active">1</li>
+            <li class="tab-button">2</li>
+            <li class="tab-button">3</li>
+            <li class="tab-button">4</li>
+            <li class="tab-button">5</li>
+        </ul>
+
+        <div class="tab-content show">
+            <p>아니</p>
+        </div>
+        <div class="tab-content">
+            <p>이정도면</p>
+        </div>
+        <div class="tab-content">
+            <p>구글링이</p>
+        </div>
+        <div class="tab-content">
+            <p>더 낫다</p>
+        </div>
+        <div class="tab-content">
+            <p>배송정보입니다. Shipping</p>
+        </div>
+    </div>
+
+    <!--스크립트-->
+    <script src="http//code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+    <script>
+
+    // tab
+    /*
+    $('.tab-button').eq(0).click(function(){ // 첫번째 탭버튼 클릭 시
+         $('.tab-button').removeClass('active'); // 모든 탭 버튼의 active class 제거
+         $('.tab-content').removeClass('show'); // 모든 탭 컨텐츠의 show class 제거
+         $(this).addClass('active'); // 이것(첫번째 탭버튼)에 active class 추가
+         $('.tab-content').eq(0).addClass('show'); // 첫번째 탭 컨텐츠에 show class 추가
+     });
+
+     $('.tab-button').eq(1).click(function(){ 
+         $('.tab-button').removeClass('active');
+         $('.tab-content').removeClass('show');
+         $(this).addClass('active');
+         $('.tab-content').eq(1).addClass('show');
+     });
+
+     $('.tab-button').eq(2).click(function(){ 
+         $('.tab-button').removeClass('active');
+         $('.tab-content').removeClass('show');
+         $(this).addClass('active');
+         $('.tab-content').eq(2).addClass('show');
+     });
+     */
+
+
+    // tab 반복문
+     for (let i = 0; i < $('.tab-button').length; i++) { //변수 i를 0으로선언, i는 탭 버튼의 개수(3개) 미만이고, i는 1씩 늘어난다
+        $('.tab-button').eq(i).click(function(){ // i번째 탭버튼 클릭 시
+            $('.tab-button').removeClass('active'); // 모든 탭 버튼의 active class 제거
+            $('.tab-content').removeClass('show'); // 모든 탭 컨텐츠의 show class 제거
+            $(this).addClass('active'); // 이것(i번째 탭버튼)에 active class 추가
+            $('.tab-content').eq(i).addClass('show'); // i번째 탭 컨텐츠에 show class 추가
+        });
+     }
+
+    </script>
+  </body>
+</html>

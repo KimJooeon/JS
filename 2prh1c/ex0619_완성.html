@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tab</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+  
+  <style>
+    ul.list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      border-bottom: 1px solid #ccc;
+      display: flex;
+    }
+
+    .tab-button {
+      display: inline-block;
+      padding: 10px 20px;
+      color: grey;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-right: -1px;
+      border-radius: 0;
+    }
+
+    .active {
+      color: black;
+      background-color: gray;
+      border-radius: 0;
+      border: 1px solid #ccc;
+      border-bottom-color: white;
+    }
+
+    .inactive {
+      color: grey;
+      background-color: #ccc;
+      border-radius: 0;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-top: none;
+      transition: opacity 0.3s;
+      border: none;
+    }
+
+    .show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <ul class="list" style="background-color: #ccc;">
+      <li class="tab-button active">London</li>
+      <li class="tab-button inactive">paris</li>
+      <li class="tab-button inactive">3</li>
+      <li class="tab-button inactive">4</li>
+      <li class="tab-button inactive">5</li>
+    </ul>
+
+    <div class="tab-content show">
+      <p>아니</p>
+    </div>
+    <div class="tab-content">
+      <p>이정도면</p>
+    </div>
+    <div class="tab-content">
+      <p>구글링이</p>
+    </div>
+    <div class="tab-content">
+      <p>더 낫다</p>
+    </div>
+    <div class="tab-content">
+      <p>아닐지도</p>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      // tab
+      $('.tab-button').click(function() {
+        const index = $(this).index();
+        $('.tab-button').removeClass('active');
+        $('.tab-button').addClass('inactive');
+        $('.tab-content').removeClass('show');
+        $(this).removeClass('inactive');
+        $(this).addClass('active');
+        $('.tab-content').eq(index).addClass('show');
+      });
+    });
+  </script>
+</body>
+</html>
